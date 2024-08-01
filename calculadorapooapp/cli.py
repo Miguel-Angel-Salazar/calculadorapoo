@@ -1,13 +1,15 @@
 import click
 
-from app.model import Calculator
+from calculadorapooapp.model import Calculator
 
 
 @click.group()
 @click.pass_context
 def calc(ctx: click.Context):
     """A simple calculator"""
-    ctx.obj = {"calculator_object": Calculator()}
+
+
+    ctx.obj ={"calculator_object", Calculator()}
 
 
 @click.command()
@@ -58,6 +60,5 @@ calc.add_command(add)
 calc.add_command(subtract)
 calc.add_command(multiply)
 calc.add_command(divide)
-
 
 
